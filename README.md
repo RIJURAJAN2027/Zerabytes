@@ -11,17 +11,21 @@ Then open http://localhost:8000
 
 ## What's on the page
 1. **Loader**: a cup fills with coffee (shorter on repeat visits in the same session)
-2. **Hero**: the 4.7★ Google rating, the headline, and floating products with mouse parallax and steam. A product tag cycles through favourites
+2. **Hero**: the headline and floating products with mouse parallax and steam. A product tag cycles through favourites
 3. **Favourites**: six signature items (a swipeable carousel on phones)
-4. **About**: the story, which lights up word by word, plus three small promises
-5. **Video**: the brand film slot (see below)
+4. **About**: the story, which lights up word by word, signed by the team
+5. **Video**: hidden until you add the video file (see below)
 6. **Menu**: tabbed categories from `js/menu-data.js` (sticky, swipeable tabs on phones)
-7. **Visit**: a **live clock in Chennai time (IST)** with an Open / Closed status, the address, landmark, plus code, directions and an embedded Google Map
+7. **Visit**: a **live clock in Chennai time (IST)** with an Open / Closed status, plus a "Find us" card with the map, address, landmark, plus code and directions
 8. **Order ahead**: Instagram DM ordering, falling beans and a receipt that prints on scroll
-9. **Instagram**: a follow card
+9. **Instagram**: a follow card (a single compact row on phones)
 10. **Footer**: a compact version on phones
 
-On phones there's also a bottom action bar (Menu · Directions · Instagram).
+On phones the top bar shows only the logo. A bottom action bar (Menu · Directions · Instagram) appears after the first screen.
+
+## Fonts
+**Baloo Thambi 2** (Ek Type) is used for headings and body text: rounded and close to the shop sign.
+**Kalam** (Indian Type Foundry) is used for the handwritten accents. Both load from Google Fonts.
 
 ## Opening hours / status
 The clock and every "Open now" label use India Standard Time, whatever the visitor's own time zone is.
@@ -31,7 +35,7 @@ The hours are set at the top of `js/main.js` (`OPEN_H = 7`, `CLOSE_H = 24`).
 - `assets/video/sagaa-demo.mp4` (H.264 MP4, ideally under 15 MB)
 - optional poster: `assets/img/video-poster.jpg`
 
-The site detects the file and plays it muted and looped while it's on screen.
+The video section stays hidden until this file exists. Once it does, the section appears and the video plays muted and looped while it's on screen.
 
 ## Edit menu / prices
 Everything is in `js/menu-data.js`. Each item is `[name, price, optional description]`.

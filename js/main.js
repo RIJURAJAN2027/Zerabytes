@@ -143,14 +143,8 @@
   });
 
   /* =========================================================
-     MOBILE MENU, CAROUSEL DOTS, VIDEO
+     CAROUSEL DOTS, VIDEO
      ========================================================= */
-  const burger = $("#burger");
-  burger.addEventListener("click", () => {
-    const open = document.body.classList.toggle("menu-open");
-    burger.setAttribute("aria-expanded", open);
-    open ? lenis && lenis.stop() : lenis && lenis.start();
-  });
 
   const favGrid = $("#favGrid"), favDots = $("#favDots");
   favDots.innerHTML = $$(".card", favGrid).map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("");
@@ -162,8 +156,33 @@
   }, { passive: true });
 
   const film = $("#film"), vid = $("#filmVideo"), soundBtn = $("#filmSound");
-  vid.addEventListener("loadeddata", () => { film.classList.add("has-video"); soundBtn.hidden = false; });
+  let filmReady = false;
+  const showFilm = () => {
+    if (filmReady) return; filmReady = true;
+    film.hidden = false;
+    if (!window.ScrollTrigger || !window.gsap) { vid.play().catch(() => {}); return; }
+    gsap.fromTo("#filmFrame", { scale: .85 }, { scale: 1, ease: "none", scrollTrigger: { trigger: "#film", start: "top bottom", end: "top 20%", scrub: true } });
+    ScrollTrigger.create({ trigger: "#filmFrame", start: "top 85%", end: "bottom 15%", onToggle: (st) => (st.isActive ? vid.play().catch(() => {}) : vid.pause()) });
+    ScrollTrigger.refresh();
+  };
+  vid.addEventListener("loadedmetadata", showFilm);
   soundBtn.addEventListener("click", () => { vid.muted = !vid.muted; soundBtn.textContent = vid.muted ? "Sound off" : "Sound on"; });
+
+  /* nav state + mobile action bar */
+  const nav = $("#nav"), bar = $("#actionbar"); let lastY = 0;
+  let navTicking = false;
+  const onScrollUI = () => {
+    const y = scrollY;
+    if (Math.abs(y - lastY) < 2 && y > 0) return;
+    const hide = y > lastY && y > 300;
+    nav.classList.toggle("is-scrolled", y > 40);
+    nav.classList.toggle("is-hidden", hide);
+    document.body.classList.toggle("nav-up", hide);
+    bar.classList.toggle("is-visible", y > innerHeight * .6);
+    lastY = y;
+  };
+  addEventListener("scroll", () => { if (!navTicking) { navTicking = true; requestAnimationFrame(() => { navTicking = false; onScrollUI(); }); } }, { passive: true });
+  onScrollUI();
 
   /* =========================================================
      NO GSAP FALLBACK
@@ -173,7 +192,6 @@
   if (!window.gsap || !window.ScrollTrigger) {
     finishLoader(); sweep.p = 1; clockVisible = true;
     $$(".story__text").forEach((el) => (el.style.opacity = 1));
-    $("#actionbar").classList.add("is-visible");
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
@@ -189,27 +207,11 @@
   $$("[data-scroll]").forEach((a) => a.addEventListener("click", (e) => {
     const id = a.getAttribute("href"); if (!id || !id.startsWith("#")) return;
     e.preventDefault();
-    document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", false);
     const target = id === "#top" ? 0 : $(id);
     if (lenis) { lenis.start(); lenis.scrollTo(target, { duration: 1.5, offset: id === "#top" ? 0 : -10 }); }
     else target === 0 ? scrollTo({ top: 0, behavior: "smooth" }) : target.scrollIntoView({ behavior: "smooth" });
   }));
 
-  /* nav state + mobile action bar */
-  const nav = $("#nav"), bar = $("#actionbar"); let lastY = 0;
-  let navTicking = false;
-  const onScrollUI = () => {
-    const y = scrollY;
-    if (Math.abs(y - lastY) < 2 && y > 0) return;
-    const hide = y > lastY && y > 300 && !document.body.classList.contains("menu-open");
-    nav.classList.toggle("is-scrolled", y > 40);
-    nav.classList.toggle("is-hidden", hide);
-    document.body.classList.toggle("nav-up", hide);
-    bar.classList.toggle("is-visible", y > innerHeight * .6);
-    lastY = y;
-  };
-  addEventListener("scroll", () => { if (!navTicking) { navTicking = true; requestAnimationFrame(() => { navTicking = false; onScrollUI(); }); } }, { passive: true });
-  onScrollUI();
 
   /* split helpers */
   $$(".reveal-lines > span").forEach((line) => { line.innerHTML = `<span>${line.innerHTML}</span>`; });
@@ -247,7 +249,7 @@
   const heroIntro = gsap.timeline({ paused: true });
   heroIntro
     .from(".hero__title .word", { yPercent: 115, duration: 1.1, stagger: .09, ease: "expo.out" })
-    .from(".hero__rating, .hero__sub, .hero__actions > *, .hero__info > div", { y: 22, opacity: 0, stagger: .06, duration: .9, ease: "power3.out" }, .15)
+    .from(".hero__sub, .hero__actions > *, .hero__info > div", { y: 22, opacity: 0, stagger: .06, duration: .9, ease: "power3.out" }, .15)
     .from(".prod--bag", { y: 260, rotate: 22, opacity: 0, duration: 1.4, ease: "expo.out" }, .1)
     .from(".prod--cup", { y: 320, rotate: -26, opacity: 0, duration: 1.4, ease: "expo.out" }, .2)
     .from(".prod--tumbler", { y: 260, x: 80, rotate: 18, opacity: 0, duration: 1.4, ease: "expo.out" }, .3)
@@ -350,12 +352,10 @@
 
   /* story */
   gsap.to($$(".w", storyText), { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: storyText, start: "top 82%", end: "bottom 50%", scrub: true } });
-  gsap.from(".story__notes li", { y: 40, opacity: 0, stagger: .1, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".story__notes", start: "top 88%" } });
+  gsap.from(".story__sign", { opacity: 0, x: -20, rotate: -6, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: ".story__sign", start: "top 92%" } });
 
-  /* film */
-  gsap.fromTo("#filmFrame", { scale: .8 }, { scale: 1, ease: "none", scrollTrigger: { trigger: "#film", start: "top bottom", end: "top 20%", scrub: true } });
-  gsap.from(".film__overlay .h2", { yPercent: 50, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: "#filmFrame", start: "top 55%" } });
-  ScrollTrigger.create({ trigger: "#filmFrame", start: "top 85%", end: "bottom 15%", onToggle: (s) => { if (!film.classList.contains("has-video")) return; s.isActive ? vid.play().catch(() => {}) : vid.pause(); } });
+  /* film: only if the video file is already there */
+  if (vid.readyState >= 1) showFilm();
 
   /* menu */
   gsap.from("#menuTabs button", { y: 16, opacity: 0, stagger: .035, duration: .6, ease: "power3.out", scrollTrigger: { trigger: "#menuTabs", start: "top 92%" } });
@@ -366,7 +366,9 @@
   /* visit */
   gsap.from(".clock", { scale: .75, rotate: -20, opacity: 0, duration: 1.3, ease: "expo.out", scrollTrigger: { trigger: "#visit", start: "top 75%" } });
   gsap.from(".visit__info > *", { y: 26, opacity: 0, stagger: .07, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".visit__info", start: "top 85%" } });
-  gsap.from("#mapFrame", { clipPath: "inset(0 0 100% 0 round 22px)", duration: 1.3, ease: "expo.inOut", scrollTrigger: { trigger: "#mapFrame", start: "top 85%" } });
+  gsap.from("#findus", { y: 70, opacity: 0, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: "#findus", start: "top 90%" } });
+  gsap.from("#mapFrame > *", { scale: 1.15, duration: 1.6, ease: "expo.out", scrollTrigger: { trigger: "#findus", start: "top 90%" } });
+  gsap.from(".findus__info > *", { y: 24, opacity: 0, stagger: .08, duration: .9, ease: "power3.out", scrollTrigger: { trigger: "#findus", start: "top 80%" } });
 
   /* order ahead: beans + cup + receipt */
   (function beans() {
@@ -405,10 +407,8 @@
   gsap.from(".insta__card", { y: 60, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: ".insta", start: "top 90%" } });
   gsap.from(".insta__avatar", { rotate: -120, scale: .5, duration: 1.3, ease: "expo.out", scrollTrigger: { trigger: ".insta", start: "top 90%" } });
 
-  /* footer word */
-  const fw = $("#footerWord span");
-  fw.innerHTML = fw.textContent.split("").map((ch) => `<span class="ch" style="display:inline-block">${ch === " " ? "&nbsp;" : ch}</span>`).join("");
-  gsap.from(".footer__word .ch", { yPercent: 100, opacity: 0, stagger: .03, duration: 1, ease: "expo.out", scrollTrigger: { trigger: ".footer__word", start: "top 95%" } });
+  /* footer */
+  gsap.from(".footer__top > *", { y: 30, opacity: 0, stagger: .08, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".footer", start: "top 92%" } });
 
   /* =========================================================
      CURSOR + MAGNETIC (desktop)
