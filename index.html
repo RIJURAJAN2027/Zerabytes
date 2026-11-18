@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Sagaa — Madras Filter Coffee House, Ramapuram · Chennai</title>
+  <meta name="description" content="Coffee Sagaa — authentic Madras filter coffee, Madurai special buns, Korean cheese buns and home-made momos. Mugalivakkam Main Rd, Ramapuram, Chennai. Open 7 AM – 12 AM." />
+  <meta name="theme-color" content="#120b07" />
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Allura&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-loading">
+
+<!-- ================= SVG SPRITE ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-cream" x1="0" x2="1">
+      <stop offset="0" stop-color="#d9cdb8"/><stop offset=".35" stop-color="#f6efe2"/><stop offset=".7" stop-color="#efe5d3"/><stop offset="1" stop-color="#bfae94"/>
+    </linearGradient>
+    <linearGradient id="g-lid" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b0807"/><stop offset=".45" stop-color="#3a302b"/><stop offset="1" stop-color="#0b0807"/>
+    </linearGradient>
+    <linearGradient id="g-steel" x1="0" x2="1">
+      <stop offset="0" stop-color="#6f7378"/><stop offset=".22" stop-color="#e9edf0"/><stop offset=".4" stop-color="#a7adb3"/><stop offset=".62" stop-color="#f4f6f8"/><stop offset="1" stop-color="#5d6166"/>
+    </linearGradient>
+    <radialGradient id="g-froth" cx=".45" cy=".4" r=".7">
+      <stop offset="0" stop-color="#e9cfa6"/><stop offset=".6" stop-color="#c49464"/><stop offset="1" stop-color="#8c5a33"/>
+    </radialGradient>
+    <linearGradient id="g-kraft" x1="0" x2="1">
+      <stop offset="0" stop-color="#cdbfa6"/><stop offset=".4" stop-color="#f3ecdf"/><stop offset=".75" stop-color="#e7dcc8"/><stop offset="1" stop-color="#a99779"/>
+    </linearGradient>
+    <radialGradient id="g-bun" cx=".4" cy=".3" r=".8">
+      <stop offset="0" stop-color="#f6c77c"/><stop offset=".45" stop-color="#d98b37"/><stop offset="1" stop-color="#8a4512"/>
+    </radialGradient>
+    <linearGradient id="g-coldcoffee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8d2b4"/><stop offset=".35" stop-color="#b98458"/><stop offset="1" stop-color="#5a3219"/>
+    </linearGradient>
+    <clipPath id="clip-bean"><ellipse cx="50" cy="50" rx="46" ry="34" transform="rotate(-28 50 50)"/></clipPath>
+  </defs>
+
+  <!-- Logo mark : striped bean -->
+  <symbol id="logo-mark" viewBox="0 0 100 100">
+    <g clip-path="url(#clip-bean)">
+      <rect width="100" height="100" fill="currentColor"/>
+      <path d="M-5 70 C 25 55, 45 70, 105 30" stroke="var(--logo-stripe, #1a110c)" stroke-width="7" fill="none"/>
+      <path d="M-5 84 C 30 68, 55 82, 105 45" stroke="var(--logo-stripe, #1a110c)" stroke-width="6" fill="none"/>
+      <path d="M-5 56 C 25 42, 45 56, 105 14" stroke="var(--logo-stripe, #1a110c)" stroke-width="7" fill="none"/>
+    </g>
+    <ellipse cx="50" cy="50" rx="46" ry="34" transform="rotate(-28 50 50)" fill="none" stroke="currentColor" stroke-width="3"/>
+  </symbol>
+
+  <!-- Paper cup -->
+  <symbol id="ill-cup" viewBox="0 0 200 290">
+    <ellipse cx="100" cy="282" rx="62" ry="7" fill="#000" opacity=".25"/>
+    <path d="M24 62 L176 62 L158 270 Q100 280 42 270 Z" fill="url(#g-cream)"/>
+    <path d="M24 62 L176 62 L174 82 L26 82 Z" fill="#000" opacity=".06"/>
+    <rect x="14" y="40" width="172" height="26" rx="8" fill="url(#g-lid)"/>
+    <path d="M30 40 Q36 16 100 14 Q164 16 170 40 Z" fill="url(#g-lid)"/>
+    <ellipse cx="128" cy="24" rx="12" ry="4" fill="#5b4c43" opacity=".7"/>
+    <rect x="14" y="58" width="172" height="5" fill="#000" opacity=".35"/>
+    <g transform="translate(100 140)">
+      <use href="#logo-mark" x="-22" y="-44" width="44" height="44" style="color:#1b120d;--logo-stripe:#efe5d3"/>
+      <text y="18" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="26" fill="#1b120d" letter-spacing="-1">Coffee</text>
+      <text y="44" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="26" fill="#1b120d" letter-spacing="-1">Sagaa</text>
+      <text y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#5a4636" letter-spacing="2">MADRAS · FILTER · HOUSE</text>
+    </g>
+    <path d="M150 70 L136 266" stroke="#fff" stroke-width="6" opacity=".25"/>
+  </symbol>
+
+  <!-- Steel tumbler + davara -->
+  <symbol id="ill-tumbler" viewBox="0 0 240 270">
+    <ellipse cx="120" cy="258" rx="104" ry="10" fill="#000" opacity=".28"/>
+    <path d="M14 196 Q14 186 30 184 L210 184 Q226 186 226 196 L214 246 Q120 262 26 246 Z" fill="url(#g-steel)"/>
+    <ellipse cx="120" cy="190" rx="106" ry="14" fill="#c8ced3"/>
+    <ellipse cx="120" cy="192" rx="94" ry="10" fill="#5b4033"/>
+    <path d="M62 34 L178 34 L166 214 Q120 222 74 214 Z" fill="url(#g-steel)"/>
+    <ellipse cx="120" cy="34" rx="58" ry="10" fill="#d9dee2"/>
+    <ellipse cx="120" cy="35" rx="52" ry="8" fill="url(#g-froth)"/>
+    <ellipse cx="108" cy="33" rx="16" ry="3" fill="#f3e2c4" opacity=".7"/>
+    <path d="M76 60 L176 60" stroke="#000" stroke-opacity=".12" stroke-width="2"/>
+    <path d="M140 44 L132 208" stroke="#fff" stroke-width="7" opacity=".45"/>
+    <use href="#logo-mark" x="102" y="104" width="36" height="36" style="color:#2a221d;--logo-stripe:#cfd5d9"/>
+  </symbol>
+
+  <!-- Coffee pouch -->
+  <symbol id="ill-bag" viewBox="0 0 210 320">
+    <ellipse cx="105" cy="312" rx="86" ry="8" fill="#000" opacity=".25"/>
+    <path d="M22 40 L188 40 L196 304 L14 304 Z" fill="url(#g-kraft)"/>
+    <path d="M22 18 L188 18 L188 44 L22 44 Z" fill="#e9dfcc"/>
+    <path d="M22 44 L188 44" stroke="#000" stroke-opacity=".15" stroke-width="2"/>
+    <path d="M22 26 L188 26" stroke="#000" stroke-opacity=".08" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="148" y="56" width="30" height="12" rx="2" fill="none" stroke="#3a2a1f" stroke-width="1"/>
+    <text x="163" y="65" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" fill="#3a2a1f">250 G</text>
+    <use href="#logo-mark" x="30" y="58" width="32" height="32" style="color:#1b120d;--logo-stripe:#efe5d3"/>
+    <text x="30" y="118" font-family="Archivo, sans-serif" font-weight="900" font-size="30" fill="#1b120d" letter-spacing="-1.4">Coffee</text>
+    <text x="30" y="148" font-family="Archivo, sans-serif" font-weight="900" font-size="30" fill="#1b120d" letter-spacing="-1.4">Sagaa</text>
+    <text x="30" y="200" font-family="Allura, cursive" font-size="44" fill="#2b1b12" transform="rotate(-8 30 200)">filter blend</text>
+    <g font-family="JetBrains Mono, monospace" font-size="6.5" fill="#4a382b" letter-spacing=".6">
+      <text x="30" y="238">80% ARABICA · 20% CHICORY</text>
+      <text x="30" y="250">DARK ROAST · FINE GRIND</text>
+      <text x="30" y="262">BREW: BRASS FILTER · 4 MIN</text>
+      <text x="30" y="284">CHENNAI · TAMIL NADU</text>
+    </g>
+    <path d="M168 48 L160 300" stroke="#fff" stroke-width="10" opacity=".25"/>
+  </symbol>
+
+  <!-- Madurai special bun -->
+  <symbol id="ill-bun" viewBox="0 0 220 170">
+    <ellipse cx="110" cy="150" rx="96" ry="14" fill="#e9e1d4"/>
+    <ellipse cx="110" cy="146" rx="84" ry="10" fill="#d8cbb6"/>
+    <path d="M30 130 Q30 40 110 34 Q190 40 190 130 Q110 146 30 130 Z" fill="url(#g-bun)"/>
+    <path d="M44 120 Q60 84 110 90 Q160 84 176 120" fill="none" stroke="#fbe1a8" stroke-width="3" opacity=".5"/>
+    <ellipse cx="86" cy="62" rx="26" ry="10" fill="#fff" opacity=".28" transform="rotate(-14 86 62)"/>
+    <g fill="#fff6e0">
+      <ellipse cx="96" cy="78" rx="3" ry="1.6"/><ellipse cx="126" cy="70" rx="3" ry="1.6" transform="rotate(30 126 70)"/>
+      <ellipse cx="146" cy="88" rx="3" ry="1.6"/><ellipse cx="74" cy="96" rx="3" ry="1.6" transform="rotate(-30 74 96)"/>
+      <ellipse cx="112" cy="104" rx="3" ry="1.6"/><ellipse cx="156" cy="108" rx="3" ry="1.6" transform="rotate(20 156 108)"/>
+    </g>
+  </symbol>
+
+  <!-- Korean cheese bun -->
+  <symbol id="ill-korean" viewBox="0 0 220 170">
+    <ellipse cx="110" cy="152" rx="98" ry="13" fill="#e9e1d4"/>
+    <g>
+      <path d="M36 136 Q30 70 70 50 L104 136 Z" fill="url(#g-bun)"/>
+      <path d="M78 46 Q110 30 142 46 L126 136 L94 136 Z" fill="url(#g-bun)"/>
+      <path d="M150 50 Q190 70 184 136 L116 136 Z" fill="url(#g-bun)"/>
+      <path d="M72 52 Q86 90 98 136 L104 136 Q92 88 80 48 Z" fill="#fff7e6"/>
+      <path d="M144 48 Q130 92 120 136 L126 136 Q138 92 152 52 Z" fill="#fff7e6"/>
+      <path d="M58 70 Q110 62 166 72 L162 82 Q110 74 60 82 Z" fill="#fff7e6" opacity=".9"/>
+      <g fill="#4d8a3a"><circle cx="90" cy="70" r="2.2"/><circle cx="132" cy="74" r="2"/><circle cx="110" cy="66" r="1.8"/><circle cx="150" cy="76" r="1.8"/></g>
+      <path d="M40 136 Q110 150 180 136" stroke="#f2d39e" stroke-width="3" fill="none"/>
+    </g>
+  </symbol>
+
+  <!-- Momos -->
+  <symbol id="ill-momo" viewBox="0 0 220 170">
+    <ellipse cx="110" cy="140" rx="104" ry="24" fill="#2a2420"/>
+    <ellipse cx="110" cy="136" rx="94" ry="19" fill="#3a332e"/>
+    <g id="momo1">
+      <path d="M40 132 Q36 96 70 92 Q104 96 100 132 Q70 140 40 132 Z" fill="#f4ede1"/>
+      <path d="M54 98 Q62 110 70 92 Q76 110 86 98" stroke="#d9cbb5" stroke-width="2" fill="none"/>
+      <path d="M70 92 Q68 84 72 80" stroke="#e8dfce" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <use href="#momo1" x="62" y="-4"/>
+    <use href="#momo1" x="118" y="2"/>
+    <use href="#momo1" x="32" y="-36"/>
+    <use href="#momo1" x="90" y="-38"/>
+    <g fill="#d2401f"><circle cx="62" cy="128" r="2"/><circle cx="140" cy="122" r="2"/><circle cx="170" cy="134" r="2"/><circle cx="104" cy="96" r="2"/></g>
+  </symbol>
+
+  <!-- Peri peri fries -->
+  <symbol id="ill-fries" viewBox="0 0 220 200">
+    <ellipse cx="110" cy="188" rx="66" ry="8" fill="#000" opacity=".2"/>
+    <g fill="#f2bf4a" stroke="#d99b22" stroke-width="1.5">
+      <rect x="62" y="24" width="14" height="110" rx="3" transform="rotate(-14 69 79)"/>
+      <rect x="82" y="12" width="14" height="120" rx="3" transform="rotate(-5 89 72)"/>
+      <rect x="102" y="6" width="14" height="124" rx="3"/>
+      <rect x="122" y="14" width="14" height="118" rx="3" transform="rotate(6 129 73)"/>
+      <rect x="140" y="28" width="14" height="108" rx="3" transform="rotate(14 147 82)"/>
+      <rect x="92" y="34" width="14" height="100" rx="3" transform="rotate(9 99 84)"/>
+      <rect x="112" y="30" width="14" height="100" rx="3" transform="rotate(-10 119 80)"/>
+    </g>
+    <g fill="#c4371b"><circle cx="72" cy="40" r="2"/><circle cx="108" cy="22" r="2"/><circle cx="132" cy="34" r="2"/><circle cx="150" cy="54" r="2"/><circle cx="94" cy="50" r="2"/></g>
+    <path d="M52 86 L168 86 L154 186 L66 186 Z" fill="#b8321a"/>
+    <path d="M52 86 Q110 110 168 86 L166 100 Q110 124 54 100 Z" fill="#8f2310"/>
+    <use href="#logo-mark" x="92" y="120" width="36" height="36" style="color:#f6efe2;--logo-stripe:#b8321a"/>
+  </symbol>
+
+  <!-- Cold coffee -->
+  <symbol id="ill-cold" viewBox="0 0 200 290">
+    <ellipse cx="100" cy="280" rx="58" ry="7" fill="#000" opacity=".2"/>
+    <path d="M150 6 L120 120" stroke="#1b120d" stroke-width="9" stroke-linecap="round"/>
+    <path d="M30 56 L170 56 L154 268 Q100 278 46 268 Z" fill="url(#g-coldcoffee)" opacity=".95"/>
+    <path d="M30 56 L170 56 L168 80 Q100 92 32 80 Z" fill="#f2e3c9"/>
+    <g fill="#fff" opacity=".35"><rect x="58" y="110" width="30" height="28" rx="6" transform="rotate(14 73 124)"/><rect x="104" y="128" width="28" height="26" rx="6" transform="rotate(-12 118 141)"/><rect x="74" y="160" width="28" height="26" rx="6" transform="rotate(8 88 173)"/></g>
+    <path d="M30 56 L170 56 L154 268 Q100 278 46 268 Z" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
+    <ellipse cx="100" cy="56" rx="70" ry="7" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3"/>
+    <path d="M146 70 L132 262" stroke="#fff" stroke-width="7" opacity=".3"/>
+    <use href="#logo-mark" x="80" y="196" width="40" height="40" style="color:#f6efe2;--logo-stripe:#5a3219"/>
+  </symbol>
+
+  <!-- Bean -->
+  <symbol id="ill-bean" viewBox="0 0 40 30">
+    <ellipse cx="20" cy="15" rx="18" ry="13" fill="#5a3218"/>
+    <ellipse cx="17" cy="11" rx="10" ry="4" fill="#8a5530" opacity=".6"/>
+    <path d="M6 18 Q20 8 34 13" stroke="#24120a" stroke-width="2.4" fill="none"/>
+  </symbol>
+</svg>
+
+<!-- ================= PRELOADER ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="mono loader__tag">// NOW BREWING — DECOCTION DRIPPING</span>
+  <div class="loader__count" id="loaderCount">000</div>
+  <svg class="loader__cup" viewBox="0 0 160 200">
+    <defs>
+      <clipPath id="cupClip"><path d="M18 18 L142 18 L128 186 Q80 194 32 186 Z"/></clipPath>
+      <linearGradient id="g-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c79a6b"/><stop offset="1" stop-color="#6b3d1f"/></linearGradient>
+    </defs>
+    <g clip-path="url(#cupClip)">
+      <g id="loaderLiquid" transform="translate(0 200)">
+        <path id="loaderWave" d="M0 6 Q20 0 40 6 T80 6 T120 6 T160 6 T200 6 T240 6 T280 6 T320 6 V220 H0 Z" fill="url(#g-fill)"/>
+        <rect x="0" y="2" width="320" height="6" fill="#e9cfa6" opacity=".7" id="loaderFoam"/>
+      </g>
+    </g>
+    <path d="M10 18 L150 18 M18 18 L32 186 Q80 194 128 186 L142 18" fill="none" stroke="#f3eadb" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>
+  <div class="loader__brand">
+    <svg class="logo-mark" viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+    <span>Coffee Sagaa</span>
+  </div>
+</div>
+
+<!-- ================= CURSOR ================= -->
+<div class="cursor" id="cursor"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <nav class="nav__links mono">
+    <a href="#favourites" data-scroll>Favourites</a>
+    <a href="#menu" data-scroll>Menu</a>
+    <a href="#story" data-scroll>Our Saga</a>
+    <a href="#visit" data-scroll>Visit</a>
+  </nav>
+  <a href="#top" class="nav__logo" data-scroll aria-label="Coffee Sagaa home">
+    <svg class="logo-mark" viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+    <span>Coffee Sagaa</span>
+  </a>
+  <a class="nav__cta mono magnetic" href="https://www.instagram.com/coffeesagaa/" target="_blank" rel="noopener">Order on Insta <span class="arr">↗</span></a>
+  <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#favourites" data-scroll>Favourites</a>
+  <a href="#menu" data-scroll>Menu</a>
+  <a href="#story" data-scroll>Our Saga</a>
+  <a href="#visit" data-scroll>Visit</a>
+  <a href="https://www.instagram.com/coffeesagaa/" target="_blank" rel="noopener">Instagram ↗</a>
+</div>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__grain"></div>
+    <canvas class="hero__steam" id="steam"></canvas>
+
+    <div class="hero__copy">
+      <span class="mono eyebrow hero__eyebrow">// Madras filter coffee house · Chennai</span>
+      <h1 class="hero__title">
+        <span class="line"><span class="word">FILTER</span> <span class="word">COFFEE</span></span>
+        <span class="line"><span class="word">FOR</span> <span class="word">EVERY</span></span>
+        <span class="line script-line"><span class="script" id="heroScript">saga</span></span>
+      </h1>
+      <p class="hero__sub">Slow-dripped decoction, frothy milk pulled from a height, crispy Madurai buns and home-made momos — brewed fresh from 7 in the morning till midnight.</p>
+      <a href="#menu" data-scroll class="link-arrow mono magnetic">Explore menu <span>→</span></a>
+    </div>
+
+    <div class="hero__stage" id="heroStage">
+      <div class="tag" id="heroTag">
+        <span class="tag__name" id="tagName">MADRAS FILTER COFFEE</span>
+        <span class="tag__price" id="tagPrice">₹30</span>
+        <span class="tag__meta mono" id="tagMeta">NO. 01 · DECOCTION · SINCE MORNING</span>
+      </div>
+      <div class="prod prod--bag" data-depth="0.6"><svg viewBox="0 0 210 320"><use href="#ill-bag"/></svg></div>
+      <div class="prod prod--cup" data-depth="1.2"><svg viewBox="0 0 200 290"><use href="#ill-cup"/></svg></div>
+      <div class="prod prod--tumbler" data-depth="1.8"><svg viewBox="0 0 240 270"><use href="#ill-tumbler"/></svg></div>
+      <svg class="bean-float b1" viewBox="0 0 40 30" data-depth="2.4"><use href="#ill-bean"/></svg>
+      <svg class="bean-float b2" viewBox="0 0 40 30" data-depth="3"><use href="#ill-bean"/></svg>
+      <svg class="bean-float b3" viewBox="0 0 40 30" data-depth="2"><use href="#ill-bean"/></svg>
+    </div>
+
+    <div class="hero__info mono">
+      <div><span>Open daily</span><span>07:00 — 00:00</span></div>
+      <div><span>70/1B-4, Mugalivakkam Main Rd</span><span>Ramapuram, Chennai 600125</span></div>
+      <div><a href="https://www.instagram.com/coffeesagaa/" target="_blank" rel="noopener">Instagram ↗</a><span>@coffeesagaa</span></div>
+    </div>
+    <div class="hero__scroll mono"><span>Scroll</span><i></i></div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee">
+      <span>Madras Filter Coffee</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+      <span class="script">Madurai Special Bun</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+      <span>Korean Cheese Bun</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+      <span class="script">Home-made Momos</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+      <span>Peri Peri Fries</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+      <span class="script">Immuni'Tea</span><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+    </div>
+  </div>
+
+  <!-- ================= FAVOURITES ================= -->
+  <section class="favs" id="favourites">
+    <svg class="favs__swash" viewBox="0 0 800 600" aria-hidden="true"><path id="swashPath" d="M90 470 C 40 300, 220 80, 380 120 C 520 160, 420 360, 300 330 C 200 300, 330 90, 520 70 C 700 50, 760 260, 620 420 C 540 510, 640 560, 760 500" fill="none" stroke="currentColor" stroke-width="70" stroke-linecap="round"/></svg>
+    <div class="favs__head">
+      <div>
+        <span class="mono eyebrow">// Our menu</span>
+        <h2 class="display reveal-lines"><span>FAVOURITES</span><span>BREWED</span><span>DAILY</span></h2>
+      </div>
+      <div class="favs__side">
+        <p class="mono small">Fresh decoction every hour.<br>Buns baked soft, toasted crisp.<br>Momos folded by hand.</p>
+        <a href="#menu" data-scroll class="link-arrow mono dark">View full menu <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="favs__grid" id="favGrid">
+      <article class="card" data-cursor="₹30">
+        <span class="card__no mono">01</span>
+        <div class="card__img"><svg viewBox="0 0 240 270"><use href="#ill-tumbler"/></svg></div>
+        <div class="card__foot mono"><span>Madras Filter Coffee</span><span>₹30</span></div>
+      </article>
+      <article class="card" data-cursor="₹80">
+        <span class="card__no mono">02</span>
+        <div class="card__img"><svg viewBox="0 0 220 170"><use href="#ill-bun"/></svg></div>
+        <div class="card__foot mono"><span>Madurai Special Bun</span><span>₹80</span></div>
+      </article>
+      <article class="card" data-cursor="₹120">
+        <span class="card__no mono">03</span>
+        <div class="card__img"><svg viewBox="0 0 220 170"><use href="#ill-korean"/></svg></div>
+        <div class="card__foot mono"><span>Korean Cheese Bun</span><span>₹120</span></div>
+      </article>
+      <article class="card" data-cursor="₹95">
+        <span class="card__no mono">04</span>
+        <div class="card__img"><svg viewBox="0 0 220 170"><use href="#ill-momo"/></svg></div>
+        <div class="card__foot mono"><span>Steamed Momos</span><span>₹95</span></div>
+      </article>
+      <article class="card" data-cursor="₹110">
+        <span class="card__no mono">05</span>
+        <div class="card__img"><svg viewBox="0 0 220 200"><use href="#ill-fries"/></svg></div>
+        <div class="card__foot mono"><span>Peri Peri Fries</span><span>₹110</span></div>
+      </article>
+      <article class="card" data-cursor="₹60">
+        <span class="card__no mono">06</span>
+        <div class="card__img"><svg viewBox="0 0 200 290"><use href="#ill-cold"/></svg></div>
+        <div class="card__foot mono"><span>Cold Coffee</span><span>₹60</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= STORY ================= -->
+  <section class="story" id="story">
+    <span class="mono eyebrow">// Our saga</span>
+    <p class="story__text" id="storyText">Every cup here is a little saga. Beans roasted dark and ground fine. Decoction dripped slow through a brass filter. Milk boiled till it froths, poured from a height between tumbler and davara. That's how Chennai has always done coffee — we just kept the ritual, and added a few buns, momos and late nights to it.</p>
+    <div class="story__stats">
+      <div><b class="count" data-to="17">0</b><span class="mono">hours open, every day</span></div>
+      <div><b>₹<span class="count" data-to="20">0</span></b><span class="mono">your saga starts at</span></div>
+      <div><b class="count" data-to="60" data-suffix="+">0</b><span class="mono">things on the menu</span></div>
+    </div>
+  </section>
+
+  <!-- ================= VIDEO ================= -->
+  <section class="film" id="film">
+    <div class="film__frame" id="filmFrame">
+      <!-- DEMO VIDEO: drop your file at assets/video/sagaa-demo.mp4 (and optional poster at assets/img/video-poster.jpg) -->
+      <video id="filmVideo" muted loop playsinline preload="metadata" poster="assets/img/video-poster.jpg">
+        <source src="assets/video/sagaa-demo.mp4" type="video/mp4" />
+      </video>
+      <div class="film__placeholder" id="filmPlaceholder">
+        <svg viewBox="0 0 240 270"><use href="#ill-tumbler"/></svg>
+        <span class="mono">// Brand film coming soon</span>
+      </div>
+      <div class="film__overlay">
+        <span class="mono eyebrow">// The saga in motion</span>
+        <h2 class="display">FROM <span class="script">decoction</span> TO DAVARA</h2>
+      </div>
+      <button class="film__sound mono" id="filmSound" hidden>Sound off</button>
+    </div>
+  </section>
+
+  <!-- ================= MENU ================= -->
+  <section class="menu" id="menu">
+    <div class="menu__head">
+      <div>
+        <span class="mono eyebrow">// Full menu · All prices in ₹</span>
+        <h2 class="display reveal-lines"><span>PICK YOUR</span><span><em class="script">chapter</em></span></h2>
+      </div>
+      <p class="mono small">Free sweetener options — white sugar, jaggery, honey &amp; sugar-free tablets. Add lemon for ₹10.</p>
+    </div>
+    <div class="menu__tabs mono" id="menuTabs" role="tablist"></div>
+    <div class="menu__body">
+      <div class="menu__visual" id="menuVisual">
+        <svg viewBox="0 0 240 270"><use id="menuVisualUse" href="#ill-tumbler"/></svg>
+        <span class="menu__visual-note mono" id="menuNote"></span>
+      </div>
+      <ol class="menu__list" id="menuList"></ol>
+    </div>
+  </section>
+
+  <!-- ================= VISIT / CLOCK ================= -->
+  <section class="visit" id="visit">
+    <div class="visit__pin">
+      <div class="visit__left">
+        <span class="mono eyebrow">// Our location</span>
+        <address class="mono">
+          COFFEE SAGAA<br>
+          70/1B-4, MUGALIVAKKAM MAIN RD<br>
+          RAMAPURAM, PARTHASARATHY NAGAR<br>
+          MANAPAKKAM, CHENNAI 600125
+        </address>
+        <a class="link-arrow mono dark magnetic" href="https://www.google.com/maps/search/?api=1&query=Coffee+Sagaa+Mugalivakkam+Main+Rd+Ramapuram+Chennai" target="_blank" rel="noopener">Get directions <span>↗</span></a>
+      </div>
+
+      <div class="clock" id="clock">
+        <div class="clock__face" id="clockFace"></div>
+        <div class="clock__hand clock__hand--h" id="handH"></div>
+        <div class="clock__hand clock__hand--m" id="handM"></div>
+        <div class="clock__center"><svg viewBox="0 0 240 270"><use href="#ill-tumbler"/></svg></div>
+      </div>
+
+      <div class="visit__right mono">
+        <span class="eyebrow">// Open daily</span>
+        <div class="visit__time"><b id="clockReadout">07:00</b><span>AM</span></div>
+        <p class="small" id="clockLine">First decoction of the day.</p>
+        <p class="small muted">07:00 — 00:00 · Mon to Sun</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CITY ================= -->
+  <section class="city" id="city">
+    <canvas class="city__beans" id="beans"></canvas>
+    <div class="city__inner">
+      <h2 class="display city__title reveal-lines"><span>CHENNAI NEVER STOPS.</span><span>YOUR FILTER COFFEE</span><span>SHOULDN'T EITHER.</span></h2>
+      <div class="city__row">
+        <div class="city__cup" id="cityCup"><svg viewBox="0 0 200 290"><use href="#ill-cup"/></svg></div>
+        <p class="mono small city__copy">Stay for a conversation, or grab it on the way to work. Early morning, late night, or somewhere in between — your tumbler is ready when you are.</p>
+        <div class="receipt-wrap">
+          <div class="printer"><i></i></div>
+          <div class="receipt" id="receipt">
+            <div class="receipt__head">
+              <svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+              <b>COFFEE SAGAA</b>
+              <span>RAMAPURAM · CHENNAI</span>
+            </div>
+            <div class="receipt__rule"></div>
+            <div class="receipt__row"><span>ORDER</span><span>#0712</span></div>
+            <div class="receipt__row"><span>1 × MADRAS FILTER COFFEE</span><span>30</span></div>
+            <div class="receipt__row"><span>1 × MADURAI SPECIAL BUN</span><span>80</span></div>
+            <div class="receipt__row"><span>1 × PERI PERI MOMOS</span><span>130</span></div>
+            <div class="receipt__rule"></div>
+            <div class="receipt__row total"><span>TOTAL</span><span>₹240</span></div>
+            <p class="receipt__big">SKIP THE LINE.<br>ORDER AHEAD.</p>
+            <div class="receipt__barcode" aria-hidden="true"></div>
+            <span class="receipt__thanks">THANK YOU · VAANGA AGAIN</span>
+          </div>
+        </div>
+      </div>
+      <div class="city__foot">
+        <p class="mono small">We brew to your schedule — not the other way around. DM us your order on Instagram and walk in to a fresh, hot tumbler.</p>
+        <a class="link-arrow mono magnetic" href="https://www.instagram.com/coffeesagaa/" target="_blank" rel="noopener">Order right now <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__grid mono">
+    <div>
+      <span class="eyebrow">// Menu</span>
+      <a href="#menu" data-scroll>Coffee</a><a href="#menu" data-scroll>Tea &amp; Immuni'Tea</a><a href="#menu" data-scroll>Buns &amp; Bakes</a><a href="#menu" data-scroll>Momos</a>
+    </div>
+    <div>
+      <span class="eyebrow">// Visit</span>
+      <span>70/1B-4, Mugalivakkam Main Rd</span><span>Ramapuram, Chennai 600125</span><span>Open daily 07:00 — 00:00</span>
+    </div>
+    <div>
+      <span class="eyebrow">// Follow</span>
+      <a href="https://www.instagram.com/coffeesagaa/" target="_blank" rel="noopener">Instagram ↗</a><span>@coffeesagaa</span>
+    </div>
+    <div class="footer__top"><a href="#top" data-scroll class="link-arrow">Back to top <span>↑</span></a></div>
+  </div>
+  <div class="footer__word" id="footerWord" aria-label="Coffee Sagaa">
+    <svg class="logo-mark" viewBox="0 0 100 100"><use href="#logo-mark"/></svg>
+    <span>Coffee&nbsp;Sagaa</span>
+  </div>
+  <div class="footer__base mono"><span>© <span id="year"></span> Coffee Sagaa</span><span>Brewed in Chennai</span></div>
+</footer>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
