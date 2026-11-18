@@ -333,6 +333,10 @@
     gsap.to(clockState, { h: 24, ease: "none", onUpdate: () => setClock(clockState.h), scrollTrigger: { trigger: ".clock", start: "top 80%", end: "bottom 10%", scrub: .6 } });
   });
 
+  /* MAP */
+  gsap.from("#mapFrame", { clipPath: "inset(0 100% 0 0 round 6px)", duration: 1.4, ease: "expo.inOut", scrollTrigger: { trigger: "#map", start: "top 80%" } });
+  gsap.from(".map__card > *", { y: 30, opacity: 0, stagger: .08, duration: .9, ease: "power3.out", scrollTrigger: { trigger: "#map", start: "top 75%" } });
+
   /* =========================================================
      CITY — falling beans + cup + receipt print
      ========================================================= */
